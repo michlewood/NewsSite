@@ -1,4 +1,16 @@
-﻿$("#Login").click(function () {
+﻿$(function () {
+    $.ajax({
+        url: '/check/view/getAll',
+        method: 'GET'
+    })
+        .done(function (result) {
+            $.each(result, function (index, item) {
+                $("#selectUser").append(`<option value="${item.email}">${item.email}</option>`);
+            });
+        })
+})
+
+$("#Login").click(function () {
     let username = $("#selectUser").val();
 
     $.ajax({

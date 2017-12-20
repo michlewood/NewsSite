@@ -214,9 +214,9 @@ namespace NewsSite.Controllers
         }
 
         [HttpGet, Route("view/getAll")]
-        public IActionResult GetAllUsers()
+        public List<ApplicationUser> GetAllUsers()
         {
-            return Ok(_userManager.Users.ToList());
+            return _userManager.Users.ToList();
         }
 
     }
