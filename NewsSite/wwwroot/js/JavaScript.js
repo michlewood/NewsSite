@@ -37,8 +37,8 @@ $("#RecoverUsers").click(function () {
 $("#ShowAllUsersWithClaims").click(function () {
 
     $.ajax({
-        url: '/check/view/getAll',
-        method: 'Get'
+        url: '/check/view/getAllWithClaims',
+        method: 'GET'
     })
         .done(function (result) {
             console.log(result);

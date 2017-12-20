@@ -219,5 +219,24 @@ namespace NewsSite.Controllers
             return _userManager.Users.ToList();
         }
 
+        [HttpGet, Route("view/getAllWithClaims")]
+        public async Task<List<ReturnModel>> GetAllUsersWithClaims()
+        {
+
+            var returnList = new List<ReturnModel>();
+            foreach (var user in _userManager.Users)
+            {
+                var claimsToThisUser = await _userManager.GetClaimsAsync(user);
+
+                var returnModel = new ReturnModel()
+                {
+                    Claims = claimsToThisUser,
+                    User = user
+                };
+                returnList.Add(returnModel);
+            }
+            return returnList;
+        }
+
     }
 }
