@@ -7,8 +7,8 @@
             $.each(result, function (index, item) {
                 $("#selectUser").append(`<option value="${item.email}">${item.email}</option>`);
             });
-        })
-})
+        });
+});
 
 $("#Login").click(function () {
     let username = $("#selectUser").val();
@@ -20,8 +20,8 @@ $("#Login").click(function () {
     })
         .done(function (result) {
             console.log(`logged in: ${result}`);
-        })
-})
+        });
+});
 
 $("#RecoverUsers").click(function () {
 
@@ -31,8 +31,8 @@ $("#RecoverUsers").click(function () {
     })
         .done(function (result) {
             console.log(result);
-        })
-})
+        });
+});
 
 $("#ShowAllUsersWithClaims").click(function () {
 
@@ -42,8 +42,8 @@ $("#ShowAllUsersWithClaims").click(function () {
     })
         .done(function (result) {
             console.log(result);
-        })
-})
+        });
+});
 
 $("#checkCanSeeOpen").click(function () {
     $.ajax({
@@ -56,7 +56,7 @@ $("#checkCanSeeOpen").click(function () {
         .fail(function (xhr, status, error) {
             console.log("Error", xhr, status, error);
         });
-})
+});
 
 $("#checkCanSeeHidden").click(function () {
     $.ajax({
@@ -69,7 +69,7 @@ $("#checkCanSeeHidden").click(function () {
         .fail(function (xhr, status, error) {
             console.log("Error", xhr, status, error);
         });
-})
+});
 
 $("#checkCanSeeHiddenAndIs20Years").click(function () {
     $.ajax({
@@ -77,13 +77,13 @@ $("#checkCanSeeHiddenAndIs20Years").click(function () {
         method: 'GET'
     })
         .done(function (result) {
-            
+
             console.log(result);
         })
         .fail(function (xhr, status, error) {
             console.log("Error", xhr, status, error);
         });
-})
+});
 
 $("#checkCanPublishSports").click(function () {
     $.ajax({
@@ -91,13 +91,13 @@ $("#checkCanPublishSports").click(function () {
         method: 'GET'
     })
         .done(function (result) {
-            
+
             console.log(result);
         })
         .fail(function (xhr, status, error) {
             console.log("Error", xhr, status, error);
         });
-})
+});
 
 $("#checkCanPublishCulture").click(function () {
     $.ajax({
@@ -110,4 +110,4 @@ $("#checkCanPublishCulture").click(function () {
         .fail(function (xhr, status, error) {
             console.log("Error", xhr, status, error);
         });
-})
+});

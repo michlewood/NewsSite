@@ -61,6 +61,7 @@ namespace NewsSite
             app.UseStaticFiles();
             app.UseStatusCodePages();
             app.UseAuthentication();
+            app.UseDirectoryBrowser();
 
             app.UseMvc();
         }

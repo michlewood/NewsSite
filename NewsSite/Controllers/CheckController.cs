@@ -34,10 +34,10 @@ namespace NewsSite.Controllers
             //AddAllUsers();
 
         }
-
-        private async void CreateUserRoles()
+        
+        private async Task CreateUserRoles()
         {
-            await _roleManager.CreateAsync(new IdentityRole("Administror"));
+            await _roleManager.CreateAsync(new IdentityRole("Administrator"));
             await _roleManager.CreateAsync(new IdentityRole("Publisher"));
             await _roleManager.CreateAsync(new IdentityRole("Subscriber"));
         }
@@ -170,9 +170,11 @@ namespace NewsSite.Controllers
         async public Task<IActionResult> RecoverUsers()
         {
 
-           
+
             _context.RemoveRange(_userManager.Users.ToList());
             _context.SaveChanges();
+
+            await CreateUserRoles();
 
             string[] users = { "adam@gmail.com", "", "Administrator",
                 "peter@gmail.com", "", "Publisher",

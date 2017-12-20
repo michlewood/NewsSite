@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace NewsSite.Migrations
 {
-    public partial class NewsSiteMigration : Migration
+    public partial class newssiteDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
