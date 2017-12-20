@@ -70,10 +70,6 @@ namespace NewsSite.Controllers
         {
             //CreateUserRoles();
 
-            await _roleManager.CreateAsync(new IdentityRole("Administrator"));
-            await _roleManager.CreateAsync(new IdentityRole("Publisher"));
-            await _roleManager.CreateAsync(new IdentityRole("Subscriber"));
-
             string[] users = { "adam@gmail.com", "", "Administrator",
                 "peter@gmail.com", "", "Publisher",
                 "susan@gmail.com", "48", "Subscriber",
@@ -174,7 +170,7 @@ namespace NewsSite.Controllers
             _context.RemoveRange(_userManager.Users.ToList());
             _context.SaveChanges();
 
-            await CreateUserRoles();
+            //await CreateUserRoles();
 
             string[] users = { "adam@gmail.com", "", "Administrator",
                 "peter@gmail.com", "", "Publisher",
