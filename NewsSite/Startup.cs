@@ -41,6 +41,8 @@ namespace NewsSite
                     policy.RequireRole("Administrator", "Publisher", "Subscriber"));
                 options.AddPolicy("isOfAge", policy =>
                     policy.RequireClaim("MinimumAge"));
+                options.AddPolicy("isOfAge", policy =>
+                    policy.RequireRole("Administrator", "Publisher"));
                 options.AddPolicy("canPublishSport", policy =>
                     policy.RequireClaim("Publish", "sport", "all"));
                 options.AddPolicy("canPublishEconomy", policy =>

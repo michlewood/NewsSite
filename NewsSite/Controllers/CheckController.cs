@@ -191,9 +191,7 @@ namespace NewsSite.Controllers
                 var resultNewUser = await _userManager.CreateAsync(newUser);
                 if (resultNewUser.Succeeded && users[i + 2] != "") await _userManager.AddToRoleAsync(newUser, users[i + 2]);
 
-                if ((await _userManager.GetRolesAsync(newUser)).Contains("Administrator")
-                    || (await _userManager.GetRolesAsync(newUser)).Contains("Publisher")
-                    || (newUser.Age != null && newUser.Age >= 20))
+                if ((newUser.Age != null && newUser.Age >= 20))
                     await _userManager.AddClaimAsync(newUser, new Claim("MinimumAge", "true"));
 
                 //var newUser = await _userManager.FindByEmailAsync(users[i]);
